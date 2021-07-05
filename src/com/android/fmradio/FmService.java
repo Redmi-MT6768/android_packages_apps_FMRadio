@@ -1297,15 +1297,6 @@ public class FmService extends Service implements FmRecorder.OnRecorderStateChan
 
         openDevice();
 
-        // Additional radio calibration for India region on MT6631 FM chips
-        if (SystemProperties.get("persist.vendor.connsys.fm_chipid", "").equalsIgnoreCase("mt6631") && 
-                SystemProperties.get("ro.boot.hwc", "").equalsIgnoreCase("india")) {
-            FmNative.setDesenseChannel(104.0f, -235);
-            FmNative.setDesenseList(0, 98.3f);
-            FmNative.setDesenseList(0, 104.0f);
-            FmNative.emsetth(0, -235);
-        }
-
         // set speaker to default status, avoid setting->clear data.
         setForceUse(mIsSpeakerUsed);
 
