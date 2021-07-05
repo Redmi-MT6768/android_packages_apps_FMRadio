@@ -163,4 +163,6 @@ public class FmNative {
     static native int[] getHardwareVersion();
     static native boolean setDesenseChannel(float f, int a);
     static native boolean setDesenseList(int a, float f);
+    static native boolean setChParam(float a, float b);
+    static native boolean setSeekSpace(int a);
 }
